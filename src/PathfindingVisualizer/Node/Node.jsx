@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Node.css'
+import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
 
 export default class Node extends Component {
     render() {
@@ -9,6 +10,9 @@ export default class Node extends Component {
         isStart,
         isFinish,
         isWall,
+        isWater,
+        isSand,
+        isJungle,
         onMouseDown,
         onMouseEnter,
         onMouseUp,
@@ -19,6 +23,12 @@ export default class Node extends Component {
         ? 'node-start'
         : isWall
         ? 'node-wall'
+        : isWater
+        ? 'node-water'
+        : isSand
+        ? 'node-sand'
+        : isJungle
+        ? 'node-jungle'
         : '';
   
       return (

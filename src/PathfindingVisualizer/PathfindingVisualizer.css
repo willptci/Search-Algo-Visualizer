@@ -1,4 +1,8 @@
 .grid {
-    margin: 100px 0 0;
+    margin: 0px 0 0;
 }
 
+.grid > div {
+    display: flex;
+    justify-content: center;
+}

@@ -14,21 +14,33 @@
     background-color: green;
 }
 
+.node-wall {
+    background-color: rgb(12, 53, 71);
+}
+
+.node-water {
+    background-color: aquamarine;
+}
+
+.node-sand {
+    background-color: rgb(241, 198, 141);
+}
+
+.node-jungle {
+    background-color: rgb(36, 183, 36);
+}
+
 .node-visited {
     animation-name: visitedAnimation;
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
     animation-delay: 0;
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-play-state: running;
-  }
+}
 
-  .node-wall {
-    background-color: rgb(12, 53, 71);
-  }  
-  
   @keyframes visitedAnimation {
     0% {
       transform: scale(0.3);
@@ -51,7 +63,7 @@
     }
   }
   
-  .node-shortest-path {
+.node-shortest-path {
     animation-name: shortestPath;
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
@@ -60,7 +72,7 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-play-state: running;
-  }
+}
   
   @keyframes shortestPath {
     0% {
@@ -78,3 +90,62 @@
       background-color: rgb(255, 254, 106);
     }
   }
+
+.node-visited-terrain {
+    animation-name: visitedTerrainAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-play-state: running;
+}
+
+@keyframes visitedTerrainAnimation {
+    0% {
+      transform: scale(0.5) translateY(0);
+    }
+  
+    50% {
+      transform: scale(0.8) translateY(-10px);
+    }
+  
+    75% {
+      transform: scale(1.2) translateY(-5px);
+    }
+  
+    100% {
+      transform: scale(1) translateY(0);
+    }
+}
+
+.node-shortest-terrain-path {
+    animation-name: shortestTerrainPath;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: normal;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+  
+  @keyframes shortestTerrainPath {
+    0% {
+      transform: scale(0.6);
+      background-color: rgb(255, 254, 106);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: rgb(255, 254, 106);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgb(255, 254, 106);
+    }
+  }
+
+  

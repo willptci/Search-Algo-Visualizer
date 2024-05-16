@@ -28,7 +28,13 @@ function sortNodesByDistance(unvisitedNodes) {
 function updateUnvisitedNeighbors(node, grid) {
     const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
     for (const neighbor of unvisitedNeighbors) {
-        neighbor.distance = node.distance + 1;
+        let weight = 1;
+        if (neighbor.isWater) {
+            weight = 10;
+        } else if (neighbor.isJungle) {
+            weight = 20;
+        }
+        neighbor.distance = node.distance + weight;
         neighbor.previousNode = node;
     }
 }
@@ -53,7 +59,7 @@ function getAllNodes(grid) {
     return nodes;
 }
 
-export function getNodesOfShortestPath(endNode) {
+export function getNodesOfShortestPathDijksras(endNode) {
     const nodesOfShortestPath = [];
     let currentNode = endNode;
     while (currentNode !== null) {
